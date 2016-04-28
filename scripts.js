@@ -26,7 +26,7 @@ jQuery(function() {
 	// console.log(cars);
 
 	for (var i = 0; i < cars.length; i++) {
-	 var str = '<div class="product_box margin_r35"><h2>' + 
+	 var str = '<div class="product_box marxgin_r35"><h2>' + 
 	 	cars[i].model + 
 	 	'</h2><div class="image_wrapper"><a href="" target="_parent"><img src=' + 
 	 	cars[i].image + 
@@ -49,9 +49,10 @@ jQuery(function() {
 
 		 // console.log("asd");
 		 // console.log(make, price, year);
+		 var found= false ;
 	for(var i = 0; i < cars.length; i++)
 	{
-		if(year == cars[i].year && make == cars[i].make && price == cars[i].price)
+		if(year == cars[i].year && make == cars[i].make && price == cars[i].price ) 
 		{
 			// console.log("asd");
 			
@@ -63,27 +64,27 @@ jQuery(function() {
 	 	' alt="product 2" height="120" width="185"></div><h4></h4>' + cars[i].make + ' <h4></h4>' + cars[i].year + '<p></p>' + cars[i].price + '</div>';
 
 	 	jQuery('.content_section').append(str1);
+	 	found = true;
+	 		
 		}
-		else if(year == 0 && make ==0 & price == 0)
-		{
-			 var str2 = '<div class="product_box margin_r35"><h2>' + 
-	 	cars[i].model + 
-	 	'</h2><div class="image_wrapper"><a href="" target="_parent"><img src=' + 
-	 	cars[i].image + 
-	 	' alt="product 2" height="120" width="185"></div><h4></h4>' + cars[i].make + ' <h4></h4>' + cars[i].year + '<p></p>' + cars[i].price + '</div>';
-	 	// console.log(str);
+	
+		
+	}
+	if(!found)
+	{
+		
 
-	 	jQuery('.content_section').append(str2);
-		}
-		else {
-			window.alert("No Car Found");
-			break;
-		}
-	}
+				var str2 = "<h2>No Results Found</h2>";
+	 	jQuery('.content_section').append(str2);	
+		
+		
 	
 	}
-		);
+}
+	);
+
 	
-	
+
+
 });
 
